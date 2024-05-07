@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebshoppingModelStoreContainer" CdmEntityContainer="WebshoppingConnect">
+    <EntitySetMapping Name="baiViets">
+      <EntityTypeMapping TypeName="WebshoppingModel.baiViet">
+        <MappingFragment StoreEntitySet="baiViet">
+          <ScalarProperty Name="maBV" ColumnName="maBV" />
+          <ScalarProperty Name="tenBV" ColumnName="tenBV" />
+          <ScalarProperty Name="ngayDang" ColumnName="ngayDang" />
+          <ScalarProperty Name="tkThanhVien" ColumnName="tkThanhVien" />
+          <ScalarProperty Name="ndTomTat" ColumnName="ndTomTat" />
+          <ScalarProperty Name="hinhDD" ColumnName="hinhDD" />
+          <ScalarProperty Name="noiDungBV" ColumnName="noiDungBV" />
+          <ScalarProperty Name="daDuyet" ColumnName="daDuyet" />
+          <ScalarProperty Name="soLanDoc" ColumnName="soLanDoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chiTietDHs">
+      <EntityTypeMapping TypeName="WebshoppingModel.chiTietDH">
+        <MappingFragment StoreEntitySet="chiTietDH">
+          <ScalarProperty Name="maDH" ColumnName="maDH" />
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+          <ScalarProperty Name="giaBan" ColumnName="giaBan" />
+          <ScalarProperty Name="khuyenMai" ColumnName="khuyenMai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="donHangs">
+      <EntityTypeMapping TypeName="WebshoppingModel.donHang">
+        <MappingFragment StoreEntitySet="donHang">
+          <ScalarProperty Name="maDH" ColumnName="maDH" />
+          <ScalarProperty Name="tenKH" ColumnName="tenKH" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="soDT" ColumnName="soDT" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dcGiaoHang" ColumnName="dcGiaoHang" />
+          <ScalarProperty Name="xuatHD" ColumnName="xuatHD" />
+          <ScalarProperty Name="tdDatHang" ColumnName="tdDatHang" />
+          <ScalarProperty Name="tdGiaoHang" ColumnName="tdGiaoHang" />
+          <ScalarProperty Name="daKichHoat" ColumnName="daKichHoat" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loaiSPs">
+      <EntityTypeMapping TypeName="WebshoppingModel.loaiSP">
+        <MappingFragment StoreEntitySet="loaiSP">
+          <ScalarProperty Name="maLoai" ColumnName="maLoai" />
+          <ScalarProperty Name="tenLoai" ColumnName="tenLoai" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sanPhams">
+      <EntityTypeMapping TypeName="WebshoppingModel.sanPham">
+        <MappingFragment StoreEntitySet="sanPham">
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="maLoai" ColumnName="maLoai" />
+          <ScalarProperty Name="tenSP" ColumnName="tenSP" />
+          <ScalarProperty Name="ndTomTat" ColumnName="ndTomTat" />
+          <ScalarProperty Name="ngayDangSP" ColumnName="ngayDangSP" />
+          <ScalarProperty Name="tkThanhVien" ColumnName="tkThanhVien" />
+          <ScalarProperty Name="giaBan" ColumnName="giaBan" />
+          <ScalarProperty Name="dvt" ColumnName="dvt" />
+          <ScalarProperty Name="khuyenMai" ColumnName="khuyenMai" />
+          <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+          <ScalarProperty Name="hinhDD" ColumnName="hinhDD" />
+          <ScalarProperty Name="ndSanPham" ColumnName="ndSanPham" />
+          <ScalarProperty Name="duocHT" ColumnName="duocHT" />
+          <ScalarProperty Name="soLanQT" ColumnName="soLanQT" />
+          <ScalarProperty Name="soLanGD" ColumnName="soLanGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taiKhoans">
+      <EntityTypeMapping TypeName="WebshoppingModel.taiKhoan">
+        <MappingFragment StoreEntitySet="taiKhoan">
+          <ScalarProperty Name="tkThanhVien" ColumnName="tkThanhVien" />
+          <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+          <ScalarProperty Name="ngayCap" ColumnName="ngayCap" />
+          <ScalarProperty Name="hoTV" ColumnName="hoTV" />
+          <ScalarProperty Name="tenTV" ColumnName="tenTV" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="ngaySinh" ColumnName="ngaySinh" />
+          <ScalarProperty Name="noiSinh" ColumnName="noiSinh" />
+          <ScalarProperty Name="soDT" ColumnName="soDT" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="dcLienLac" ColumnName="dcLienLac" />
+          <ScalarProperty Name="duocSD" ColumnName="duocSD" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WebshoppingModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

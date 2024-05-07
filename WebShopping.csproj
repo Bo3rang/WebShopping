@@ -1,0 +1,871 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BE9B60D-BBA9-4C00-946C-230EEA6454C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebShopping</RootNamespace>
+    <AssemblyName>WebShopping</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminCss\css\nucleo-icons.css" />
+    <Content Include="AdminCss\css\nucleo-svg.css" />
+    <Content Include="AdminCss\css\soft-ui-dashboard.css" />
+    <Content Include="AdminCss\css\soft-ui-dashboard.min.css" />
+    <Content Include="AdminCss\fonts\nucleo-icons.svg" />
+    <Content Include="AdminCss\img\apple-icon.png" />
+    <Content Include="AdminCss\img\bg1.jpg" />
+    <Content Include="AdminCss\img\bruce-mars.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved-10.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved-11.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved-6.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved-8.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved0.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved1.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved10.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved11-small.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved11.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved12.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved13.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved14.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved19.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved2.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved21.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved3.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved4.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved5-small.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved5.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved6-small.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved6.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved7.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved8.jpg" />
+    <Content Include="AdminCss\img\curved-images\curved9.jpg" />
+    <Content Include="AdminCss\img\curved-images\white-curved.jpg" />
+    <Content Include="AdminCss\img\down-arrow-dark.svg" />
+    <Content Include="AdminCss\img\down-arrow-white.svg" />
+    <Content Include="AdminCss\img\down-arrow.svg" />
+    <Content Include="AdminCss\img\favicon.png" />
+    <Content Include="AdminCss\img\home-decor-1.jpg" />
+    <Content Include="AdminCss\img\home-decor-2.jpg" />
+    <Content Include="AdminCss\img\home-decor-3.jpg" />
+    <Content Include="AdminCss\img\illustrations\rocket-dark.png" />
+    <Content Include="AdminCss\img\illustrations\rocket-white.png" />
+    <Content Include="AdminCss\img\ivana-square.jpg" />
+    <Content Include="AdminCss\img\ivancik.jpg" />
+    <Content Include="AdminCss\img\kal-visuals-square.jpg" />
+    <Content Include="AdminCss\img\logo-ct-dark.png" />
+    <Content Include="AdminCss\img\logo-ct.png" />
+    <Content Include="AdminCss\img\logos\mastercard.png" />
+    <Content Include="AdminCss\img\logos\visa.png" />
+    <Content Include="AdminCss\img\marie.jpg" />
+    <Content Include="AdminCss\img\shapes\pattern-lines.svg" />
+    <Content Include="AdminCss\img\shapes\shape-1.svg" />
+    <Content Include="AdminCss\img\shapes\shape-2.svg" />
+    <Content Include="AdminCss\img\shapes\shape-3.svg" />
+    <Content Include="AdminCss\img\shapes\wave-down.svg" />
+    <Content Include="AdminCss\img\shapes\wave-up.svg" />
+    <Content Include="AdminCss\img\shapes\waves-gray.svg" />
+    <Content Include="AdminCss\img\shapes\waves-white.svg" />
+    <Content Include="AdminCss\img\small-logos\icon-sun-cloud.png" />
+    <Content Include="AdminCss\img\small-logos\logo-atlassian.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-invision.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-jira.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-slack.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-spotify.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-webdev.svg" />
+    <Content Include="AdminCss\img\small-logos\logo-xd.svg" />
+    <Content Include="AdminCss\img\team-1.jpg" />
+    <Content Include="AdminCss\img\team-2.jpg" />
+    <Content Include="AdminCss\img\team-3.jpg" />
+    <Content Include="AdminCss\img\team-4.jpg" />
+    <Content Include="AdminCss\img\theme\angular.jpg" />
+    <Content Include="AdminCss\img\theme\bootstrap.jpg" />
+    <Content Include="AdminCss\img\theme\dribbble.png" />
+    <Content Include="AdminCss\img\theme\dropbox.png" />
+    <Content Include="AdminCss\img\theme\mastercard.png" />
+    <Content Include="AdminCss\img\theme\paypal.png" />
+    <Content Include="AdminCss\img\theme\react.jpg" />
+    <Content Include="AdminCss\img\theme\sketch.jpg" />
+    <Content Include="AdminCss\img\theme\slack.png" />
+    <Content Include="AdminCss\img\theme\spotify.jpeg" />
+    <Content Include="AdminCss\img\theme\tim.png" />
+    <Content Include="AdminCss\img\theme\unass.jpg" />
+    <Content Include="AdminCss\img\theme\visa.png" />
+    <Content Include="AdminCss\img\theme\vue.jpg" />
+    <Content Include="AdminCss\img\vr-bg.jpg" />
+    <Content Include="AdminCss\js\core\bootstrap.bundle.min.js" />
+    <Content Include="AdminCss\js\core\bootstrap.min.js" />
+    <Content Include="AdminCss\js\core\popper.min.js" />
+    <Content Include="AdminCss\js\plugins\bootstrap-notify.js" />
+    <Content Include="AdminCss\js\plugins\Chart.extension.js" />
+    <Content Include="AdminCss\js\plugins\chartjs.min.js" />
+    <Content Include="AdminCss\js\plugins\perfect-scrollbar.min.js" />
+    <Content Include="AdminCss\js\plugins\smooth-scrollbar.min.js" />
+    <Content Include="AdminCss\js\soft-ui-dashboard.js" />
+    <Content Include="AdminCss\js\soft-ui-dashboard.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\WebShopping.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebShopping.Context.cs</LastGenOutput>
+      <DependentUpon>WebShopping.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\WebShopping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebShopping.edmx</DependentUpon>
+      <LastGenOutput>WebShopping.cs</LastGenOutput>
+    </Content>
+    <Content Include="PageCss\css\main.css" />
+    <Content Include="PageCss\css\util.css" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="PageCss\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="PageCss\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="PageCss\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\icon-font.min.css" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="PageCss\fonts\Montserrat\OFL.txt" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\OFL.txt" />
+    <Content Include="PageCss\images\about-01.jpg" />
+    <Content Include="PageCss\images\about-02.jpg" />
+    <Content Include="PageCss\images\avatar-01.jpg" />
+    <Content Include="PageCss\images\banner-01.jpg" />
+    <Content Include="PageCss\images\banner-02.jpg" />
+    <Content Include="PageCss\images\banner-03.jpg" />
+    <Content Include="PageCss\images\banner-04.jpg" />
+    <Content Include="PageCss\images\banner-05.jpg" />
+    <Content Include="PageCss\images\banner-06.jpg" />
+    <Content Include="PageCss\images\banner-07.jpg" />
+    <Content Include="PageCss\images\banner-08.jpg" />
+    <Content Include="PageCss\images\banner-09.jpg" />
+    <Content Include="PageCss\images\Banner\Banner-01.png" />
+    <Content Include="PageCss\images\Banner\Banner-02.png" />
+    <Content Include="PageCss\images\Banner\Banner-03.png" />
+    <Content Include="PageCss\images\bg-01.jpg" />
+    <Content Include="PageCss\images\bg-02.jpg" />
+    <Content Include="PageCss\images\blog-01.jpg" />
+    <Content Include="PageCss\images\blog-02.jpg" />
+    <Content Include="PageCss\images\blog-03.jpg" />
+    <Content Include="PageCss\images\blog-04.jpg" />
+    <Content Include="PageCss\images\blog-05.jpg" />
+    <Content Include="PageCss\images\blog-06.jpg" />
+    <Content Include="PageCss\images\gallery-01.jpg" />
+    <Content Include="PageCss\images\gallery-02.jpg" />
+    <Content Include="PageCss\images\gallery-03.jpg" />
+    <Content Include="PageCss\images\gallery-04.jpg" />
+    <Content Include="PageCss\images\gallery-05.jpg" />
+    <Content Include="PageCss\images\gallery-06.jpg" />
+    <Content Include="PageCss\images\gallery-07.jpg" />
+    <Content Include="PageCss\images\gallery-08.jpg" />
+    <Content Include="PageCss\images\gallery-09.jpg" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-01.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-02.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-03.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-04.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-01%281%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-01.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-02%281%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-02%282%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-02%283%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-02%284%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-02.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-03%281%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-03%282%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-03.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-04%281%29.png" />
+    <Content Include="PageCss\images\Hoodie\Hoodie-Detail-04.png" />
+    <Content Include="PageCss\images\icons\favicon.png" />
+    <Content Include="PageCss\images\icons\icon-close.png" />
+    <Content Include="PageCss\images\icons\icon-close2.png" />
+    <Content Include="PageCss\images\icons\icon-email.png" />
+    <Content Include="PageCss\images\icons\icon-heart-01.png" />
+    <Content Include="PageCss\images\icons\icon-heart-02.png" />
+    <Content Include="PageCss\images\icons\icon-next.png" />
+    <Content Include="PageCss\images\icons\icon-pay-01.png" />
+    <Content Include="PageCss\images\icons\icon-pay-02.png" />
+    <Content Include="PageCss\images\icons\icon-pay-03.png" />
+    <Content Include="PageCss\images\icons\icon-pay-04.png" />
+    <Content Include="PageCss\images\icons\icon-pay-05.png" />
+    <Content Include="PageCss\images\icons\icon-prev.png" />
+    <Content Include="PageCss\images\icons\logo-01.png" />
+    <Content Include="PageCss\images\icons\logo-02.png" />
+    <Content Include="PageCss\images\icons\pin.png" />
+    <Content Include="PageCss\images\item-cart-01.jpg" />
+    <Content Include="PageCss\images\item-cart-02.jpg" />
+    <Content Include="PageCss\images\item-cart-03.jpg" />
+    <Content Include="PageCss\images\item-cart-04.jpg" />
+    <Content Include="PageCss\images\item-cart-05.jpg" />
+    <Content Include="PageCss\images\Jacket\Jacket-01.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-02.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-03.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-04.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-01%281%29.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-01.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-02%281%29.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-02%282%29.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-02.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-03%281%29.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-03.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-04%281%29.png" />
+    <Content Include="PageCss\images\Jacket\Jacket-Detail-04.png" />
+    <Content Include="PageCss\images\Polo\Polo-01.png" />
+    <Content Include="PageCss\images\Polo\Polo-02.png" />
+    <Content Include="PageCss\images\Polo\Polo-03.png" />
+    <Content Include="PageCss\images\Polo\Polo-04.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-01%281%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-01%282%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-01.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-02%281%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-02%282%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-02.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-03%281%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-03%282%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-03.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-04%281%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-04%282%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-04%283%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-04%284%29.png" />
+    <Content Include="PageCss\images\Polo\Polo-Detail-04.png" />
+    <Content Include="PageCss\images\product-01.jpg" />
+    <Content Include="PageCss\images\product-02.jpg" />
+    <Content Include="PageCss\images\product-03.jpg" />
+    <Content Include="PageCss\images\product-04.jpg" />
+    <Content Include="PageCss\images\product-05.jpg" />
+    <Content Include="PageCss\images\product-06.jpg" />
+    <Content Include="PageCss\images\product-07.jpg" />
+    <Content Include="PageCss\images\product-08.jpg" />
+    <Content Include="PageCss\images\product-09.jpg" />
+    <Content Include="PageCss\images\product-10.jpg" />
+    <Content Include="PageCss\images\product-11.jpg" />
+    <Content Include="PageCss\images\product-12.jpg" />
+    <Content Include="PageCss\images\product-13.jpg" />
+    <Content Include="PageCss\images\product-14.jpg" />
+    <Content Include="PageCss\images\product-15.jpg" />
+    <Content Include="PageCss\images\product-16.jpg" />
+    <Content Include="PageCss\images\product-detail-01.jpg" />
+    <Content Include="PageCss\images\product-detail-02.jpg" />
+    <Content Include="PageCss\images\product-detail-03.jpg" />
+    <Content Include="PageCss\images\product-min-01.jpg" />
+    <Content Include="PageCss\images\product-min-02.jpg" />
+    <Content Include="PageCss\images\product-min-03.jpg" />
+    <Content Include="PageCss\images\Shirt\Shirt-01.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-02.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-03.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-04.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-01%281%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-01%282%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-01%283%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-01%284%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-01.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02%281%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02%282%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02%283%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02%284%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02%285%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-02.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-03%281%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-03%282%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-03.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-04%281%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-04%282%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-04%283%29.png" />
+    <Content Include="PageCss\images\Shirt\Shirt-Detail-04.png" />
+    <Content Include="PageCss\images\Slider\Slider_01.png" />
+    <Content Include="PageCss\images\Slider\Slider_02.png" />
+    <Content Include="PageCss\images\Slider\Slider_03.png" />
+    <Content Include="PageCss\images\thumb-01.jpg" />
+    <Content Include="PageCss\images\thumb-02.jpg" />
+    <Content Include="PageCss\images\thumb-03.jpg" />
+    <Content Include="PageCss\images\TShirt\Tshirt-01.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-02.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-03.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-04.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-01%281%29.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-01.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-02%281%29.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-02%282%29.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-02%283%29.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-02.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-03.png" />
+    <Content Include="PageCss\images\TShirt\Tshirt-Detail-04.png" />
+    <Content Include="PageCss\js\main.js" />
+    <Content Include="PageCss\js\map-custom.js" />
+    <Content Include="PageCss\js\slick-custom.js" />
+    <Content Include="PageCss\vendor\animate\animate.css" />
+    <Content Include="PageCss\vendor\animsition\css\animsition.css" />
+    <Content Include="PageCss\vendor\animsition\css\animsition.min.css" />
+    <Content Include="PageCss\vendor\animsition\js\animsition.js" />
+    <Content Include="PageCss\vendor\animsition\js\animsition.min.js" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="PageCss\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="PageCss\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="PageCss\vendor\bootstrap\js\popper.js" />
+    <Content Include="PageCss\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="PageCss\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="PageCss\vendor\countdowntime\countdowntime.js" />
+    <Content Include="PageCss\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="PageCss\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="PageCss\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="PageCss\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="PageCss\vendor\daterangepicker\moment.js" />
+    <Content Include="PageCss\vendor\daterangepicker\moment.min.js" />
+    <Content Include="PageCss\vendor\isotope\isotope.pkgd.min.js" />
+    <Content Include="PageCss\vendor\jqueryui\external\jquery\jquery.js" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_444444_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_555555_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_777620_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_777777_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="PageCss\vendor\jqueryui\index.html" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.css" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.js" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.min.css" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.min.js" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.structure.css" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.structure.min.css" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.theme.css" />
+    <Content Include="PageCss\vendor\jqueryui\jquery-ui.theme.min.css" />
+    <Content Include="PageCss\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="PageCss\vendor\lightbox2\css\lightbox.css" />
+    <Content Include="PageCss\vendor\lightbox2\css\lightbox.min.css" />
+    <Content Include="PageCss\vendor\lightbox2\images\close.png" />
+    <Content Include="PageCss\vendor\lightbox2\images\loading.gif" />
+    <Content Include="PageCss\vendor\lightbox2\images\next.png" />
+    <Content Include="PageCss\vendor\lightbox2\images\prev.png" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox.js" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox.min.js" />
+    <Content Include="PageCss\vendor\MagnificPopup\jquery.magnific-popup.js" />
+    <Content Include="PageCss\vendor\MagnificPopup\jquery.magnific-popup.min.js" />
+    <Content Include="PageCss\vendor\MagnificPopup\magnific-popup.css" />
+    <Content Include="PageCss\vendor\parallax100\parallax100.js" />
+    <Content Include="PageCss\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="PageCss\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="PageCss\vendor\select2\select2.css" />
+    <Content Include="PageCss\vendor\select2\select2.js" />
+    <Content Include="PageCss\vendor\select2\select2.min.css" />
+    <Content Include="PageCss\vendor\select2\select2.min.js" />
+    <Content Include="PageCss\vendor\slick\ajax-loader.gif" />
+    <Content Include="PageCss\vendor\slick\fonts\slick.svg" />
+    <Content Include="PageCss\vendor\slick\slick-theme.css" />
+    <Content Include="PageCss\vendor\slick\slick.css" />
+    <Content Include="PageCss\vendor\slick\slick.js" />
+    <Content Include="PageCss\vendor\slick\slick.min.js" />
+    <Content Include="PageCss\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashBoardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\ShopingCartController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\baiViet.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\chiTietDH.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\donHang.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\loaiSP.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sanPham.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\taiKhoan.cs">
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebShopping.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebShopping.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebShopping.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebShopping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebShopping.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebShopping.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\DashBoard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Index.cshtml" />
+    <Content Include="AdminCss\css\soft-ui-dashboard.css.map" />
+    <Content Include="AdminCss\fonts\nucleo-icons.eot" />
+    <Content Include="AdminCss\fonts\nucleo-icons.ttf" />
+    <Content Include="AdminCss\fonts\nucleo-icons.woff" />
+    <Content Include="AdminCss\fonts\nucleo-icons.woff2" />
+    <Content Include="AdminCss\fonts\nucleo.eot" />
+    <Content Include="AdminCss\fonts\nucleo.ttf" />
+    <Content Include="AdminCss\fonts\nucleo.woff" />
+    <Content Include="AdminCss\fonts\nucleo.woff2" />
+    <Content Include="AdminCss\js\soft-ui-dashboard.js.map" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\bootstrap-grid.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\bootstrap-utilities.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\bootstrap.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_form-check.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_form-control.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_form-range.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_form-select.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_form-text.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_input-group.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_labels.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\forms\_validation.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_color-bg.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_position.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_ratio.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_stacks.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\helpers\_vr.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_alert.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_backdrop.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_banner.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_caret.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_container.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_forms.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_gradients.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_grid.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_image.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_list-group.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_lists.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_pagination.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_resize.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_transition.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_utilities.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\utilities\_api.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\vendor\_rfs.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_accordion.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_alert.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_badge.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_breadcrumb.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_button-group.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_card.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_carousel.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_close.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_containers.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_dropdown.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_forms.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_functions.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_grid.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_helpers.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_images.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_list-group.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_maps.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_mixins.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_modal.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_nav.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_navbar.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_offcanvas.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_pagination.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_placeholders.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_popover.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_progress.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_reboot.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_root.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_spinners.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_tables.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_toasts.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_tooltip.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_transitions.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_type.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_utilities.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\bootstrap\_variables.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\cards\card-background.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\custom\_styles.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\custom\_variables.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_form-check.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_form-select.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_form-switch.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_forms.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_input-group.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_inputs.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\forms\_labels.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\mixins.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\_badge.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\_container.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\_hover.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\mixins\_social-buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\plugins\free\plugins.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\plugins\free\_flatpickr.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\plugins\free\_nouislider.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\plugins\free\_prism.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\theme.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_animations.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_avatars.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_badge.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_breadcrumb.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_cards-extend.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_cards.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_choices.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_dark-version.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_dropdowns.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_fixed-plugin.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_form-switch.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_full-calendar.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_header.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_info-areas.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_misc-extend.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_misc.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_navbar-vertical.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_navbar.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_pagination.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_rtl.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_social-buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_table.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_timeline.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_utilities-extend.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_utilities.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\variables\_virtual-reality.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_alert.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_avatars.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_badge.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_breadcrumbs.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_cards.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_dark-version.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_dropdown.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_dropup.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_fixed-plugin.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_footer.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_forms.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_gradients.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_header.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_info-areas.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_misc.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_nav.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_navbar-vertical.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_navbar.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_pagination.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_popovers.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_progress.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_rtl.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_social-buttons.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_tables.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_tilt.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_timeline.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_tooltips.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_typography.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_utilities-extend.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_utilities.scss" />
+    <Content Include="AdminCss\scss\soft-ui-dashboard\_variables.scss" />
+    <EntityDeploy Include="Models\WebShopping.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebShopping.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WebShopping.edmx.diagram">
+      <DependentUpon>WebShopping.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="PageCss\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="PageCss\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="PageCss\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="PageCss\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="PageCss\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="PageCss\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="PageCss\fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-Black.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-BlackItalic.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-Bold.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-BoldItalic.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-Italic.ttf" />
+    <Content Include="PageCss\fonts\PlayfairDisplay\PlayfairDisplay-Regular.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="PageCss\fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="PageCss\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox-plus-jquery.min.map" />
+    <Content Include="PageCss\vendor\lightbox2\js\lightbox.min.map" />
+    <Content Include="PageCss\vendor\slick\config.rb" />
+    <Content Include="PageCss\vendor\slick\fonts\slick.eot" />
+    <Content Include="PageCss\vendor\slick\fonts\slick.ttf" />
+    <Content Include="PageCss\vendor\slick\fonts\slick.woff" />
+    <Content Include="PageCss\vendor\slick\slick-theme.less" />
+    <Content Include="PageCss\vendor\slick\slick-theme.scss" />
+    <Content Include="PageCss\vendor\slick\slick.less" />
+    <Content Include="PageCss\vendor\slick\slick.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\ShopingCart\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50259</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

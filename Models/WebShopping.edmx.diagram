@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8fa69cc94a674be2aeb884b2a0726438" Name="Diagram1">
+        <EntityTypeShape EntityType="WebshoppingModel.baiViet" Width="1.5" PointX="4.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebshoppingModel.chiTietDH" Width="1.5" PointX="7.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebshoppingModel.donHang" Width="1.5" PointX="7.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebshoppingModel.loaiSP" Width="1.5" PointX="2" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebshoppingModel.sanPham" Width="1.5" PointX="4.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebshoppingModel.taiKhoan" Width="1.5" PointX="2" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="WebshoppingModel.FK__baiViet__tkThanh__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="WebshoppingModel.FK__chiTietDH__maDH__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="WebshoppingModel.FK__chiTietDH__maSP__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="WebshoppingModel.FK__sanPham__maLoai__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="WebshoppingModel.FK__sanPham__tkThanh__5070F446" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebshoppingModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
